@@ -20,8 +20,8 @@ app.use('/api/dashboard', require('./routes/dashboard'));
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
-// Catch-all: serve frontend
-app.get('/{*path}', (req, res) => {
+// Catch-all: serve frontend (FIXED)
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
