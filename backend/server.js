@@ -8,22 +8,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Serve frontend static files
+// Serve frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// API Routes
+// API routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/projects', require('./routes/projects'));
 app.use('/api/tasks', require('./routes/tasks'));
 app.use('/api/dashboard', require('./routes/dashboard'));
 
-// Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
-// Catch-all: serve frontend (FIXED)
+// Catch-all
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
