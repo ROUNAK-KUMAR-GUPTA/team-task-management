@@ -14,7 +14,7 @@ This is a full-stack Team Task Management application that helps users manage pr
 --------------------------------------------------
 
 📁 Project Structure:
-
+```
 team-task-management/
 │
 ├── backend/
@@ -40,7 +40,7 @@ team-task-management/
 │
 ├── .gitignore                 # Ignored files (node_modules, .env, db files)
 └── README.txt                 # Project documentation
-
+```
 --------------------------------------------------
 
 ⚙️ Tech Stack:
