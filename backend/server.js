@@ -20,7 +20,8 @@ app.use('/api/dashboard', require('./routes/dashboard'));
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
 // Catch-all
-app.get('*', (req, res) => {
+// Catch-all
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
