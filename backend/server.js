@@ -21,7 +21,7 @@ app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
 // Catch-all
 // Catch-all
-app.get('/*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
